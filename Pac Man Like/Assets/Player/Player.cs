@@ -14,12 +14,13 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         _rigidBody = GetComponent<Rigidbody>();
-
+        HideAndLockScreen();
     }
-    private void Start()
+    private void HideAndLockScreen()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     // Update is called once per frame
     void Update()
