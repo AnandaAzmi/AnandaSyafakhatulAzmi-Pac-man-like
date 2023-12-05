@@ -58,7 +58,15 @@
     <Analyzer Include="D:\Unity 2022 3.3\Unity 2022.3.3f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Enemy\Enemy.cs" />
+    <Compile Include="Assets\PIckable\PickableManager.cs" />
+    <Compile Include="Assets\PIckable\PickableType.cs" />
+    <Compile Include="Assets\PIckable\Pickable.cs" />
+    <Compile Include="Assets\Enemy\RetreatState.cs" />
+    <Compile Include="Assets\Enemy\PatrolState.cs" />
     <Compile Include="Assets\Player\Player.cs" />
+    <Compile Include="Assets\Enemy\BaseState.cs" />
+    <Compile Include="Assets\Enemy\ChaseState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -692,6 +700,10 @@
       <Project>{27F9AC9D-D2D7-B03F-F56C-41FB27E39881}</Project>
       <Name>com.unity.cinemachine.editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.csproj">
+      <Project>{FB235F30-902F-F68C-E22B-28B506B8EB9E}</Project>
+      <Name>Unity.AI.Navigation</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
       <Project>{419903FC-9DB1-9F64-AD9C-F2B9E6235637}</Project>
       <Name>Unity.PlasticSCM.Editor</Name>
@@ -728,13 +740,13 @@
       <Project>{E22F5321-19B6-B34C-10BD-351EC4BE0F32}</Project>
       <Name>Unity.VisualScripting.Core.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.ProBuilder.AddOns.Editor.csproj">
-      <Project>{9A50B471-6A51-56F5-F71B-E667A6793B7C}</Project>
-      <Name>Unity.ProBuilder.AddOns.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.Rider.Editor.csproj">
       <Project>{1518F9B1-2B9A-AFE6-B95C-C08E43BE1EBE}</Project>
       <Name>Unity.Rider.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.AddOns.Editor.csproj">
+      <Project>{9A50B471-6A51-56F5-F71B-E667A6793B7C}</Project>
+      <Name>Unity.ProBuilder.AddOns.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
       <Project>{8FADC07B-8318-46C8-54A9-101363197614}</Project>
@@ -772,6 +784,10 @@
       <Project>{7F5AA15E-6148-2BF0-742E-7B092109DC22}</Project>
       <Name>Unity.TestTools.CodeCoverage.Editor.OpenCover.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Updater.csproj">
+      <Project>{DDE815F1-6DDB-0F5C-F6D8-2E0F58507694}</Project>
+      <Name>Unity.AI.Navigation.Updater</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj">
       <Project>{95052CD4-27AF-2E3F-C913-399C78415C76}</Project>
       <Name>Unity.VisualScripting.State.Editor</Name>
@@ -784,6 +800,10 @@
       <Project>{62DFB5AE-29FF-CE55-0E62-ACBC295831B0}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Editor.csproj">
+      <Project>{24C3EA53-76D0-8280-BD5F-1EF80B14ACC9}</Project>
+      <Name>Unity.AI.Navigation.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.ProBuilder.AssetIdRemapUtility.csproj">
       <Project>{CC242BB0-A628-9C87-8639-BC71482F835E}</Project>
       <Name>Unity.ProBuilder.AssetIdRemapUtility</Name>
@@ -792,13 +812,17 @@
       <Project>{9098166C-2E7B-9776-7DC9-1D08F68E1E71}</Project>
       <Name>Unity.VisualScripting.State</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.VSCode.Editor.csproj">
-      <Project>{1EAA34C8-8A1A-0C60-66CF-103329D5D5D8}</Project>
-      <Name>Unity.VSCode.Editor</Name>
+    <ProjectReference Include="Unity.AI.Navigation.Editor.ConversionSystem.csproj">
+      <Project>{DB2FD567-851A-EB96-15E1-60D721A0E156}</Project>
+      <Name>Unity.AI.Navigation.Editor.ConversionSystem</Name>
     </ProjectReference>
     <ProjectReference Include="Cinemachine.csproj">
       <Project>{B1D753B7-C292-7F7F-69F8-85A442314233}</Project>
       <Name>Cinemachine</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VSCode.Editor.csproj">
+      <Project>{1EAA34C8-8A1A-0C60-66CF-103329D5D5D8}</Project>
+      <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

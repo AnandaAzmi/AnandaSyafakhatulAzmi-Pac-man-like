@@ -58,7 +58,15 @@
     <Analyzer Include="D:\Unity 2022 3.3\Unity 2022.3.3f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Enemy\Enemy.cs" />
+    <Compile Include="Assets\PIckable\PickableManager.cs" />
+    <Compile Include="Assets\PIckable\PickableType.cs" />
+    <Compile Include="Assets\PIckable\Pickable.cs" />
+    <Compile Include="Assets\Enemy\RetreatState.cs" />
+    <Compile Include="Assets\Enemy\PatrolState.cs" />
     <Compile Include="Assets\Player\Player.cs" />
+    <Compile Include="Assets\Enemy\BaseState.cs" />
+    <Compile Include="Assets\Enemy\ChaseState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -633,6 +641,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.AI.Navigation.Player.csproj">
+      <Project>{58BA112E-A0CA-5D99-90C2-7DF701793087}</Project>
+      <Name>Unity.AI.Navigation.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.ProBuilder.Player.csproj">
       <Project>{682BE26F-CB7A-42CE-304C-C2F1D1A02BAC}</Project>
       <Name>Unity.ProBuilder.Player</Name>
