@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -17,8 +18,28 @@ public class Player : MonoBehaviour
 
     private Rigidbody _rigidBody;
     private Coroutine _powerupCoroutine;
+    private bool _isPowerUpActive = false;
+    [SerializeField]
+    private Transform _respawnPoint;
+    [SerializeField]
+    private int _health;
+    [SerializeField]
+    private TMP_Text _healthText;
 
-
+    public void Dead()
+    {
+        _health -=1;
+        if (_health > 0)
+        {
+            transform.position = _respawnPoint.position;
+        }
+        else
+        {
+            _health = 0;
+            Debug.Log("Lose");
+        }
+        UpdateUI();
+    }
     public void PickPowerUp()
     {
         if(_powerupCoroutine != null)
@@ -30,6 +51,7 @@ public class Player : MonoBehaviour
     
     private IEnumerator StartPowerUp()
     {
+        _isPowerUpActive = true;
         if (OnPowerUpStart != null)
         {
           
@@ -37,15 +59,18 @@ public class Player : MonoBehaviour
         }
         
         yield return new WaitForSeconds(_powerupDuration);
+        _isPowerUpActive = false;
         if (OnPowerUpStop != null)
         {
            
             OnPowerUpStop();
         }
-        
     }
+
+    
     private void Awake()
     {
+        UpdateUI();
         _rigidBody = GetComponent<Rigidbody>();
         HideAndLockScreen();
     }
@@ -66,5 +91,19 @@ public class Player : MonoBehaviour
         horizontalDirection.y = 0;
         Vector3 movementDirection = new Vector3 (horizontal, 0, vertical);
         _rigidBody.velocity = movementDirection * _speed * Time.fixedDeltaTime;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (_isPowerUpActive)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                collision.gameObject.GetComponent<Enemy>().Dead();
+            }
+        }
+    }
+   private void UpdateUI()
+    {
+        _healthText.text = "Health : " + _health;
     }
 }

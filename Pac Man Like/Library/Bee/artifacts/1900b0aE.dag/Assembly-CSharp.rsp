@@ -371,6 +371,7 @@
 "Assets/PIckable/PickableManager.cs"
 "Assets/PIckable/PickableType.cs"
 "Assets/Player/Player.cs"
+"Assets/Score/ScoreManager.cs"
 -langversion:9.0
 
 /deterministic
