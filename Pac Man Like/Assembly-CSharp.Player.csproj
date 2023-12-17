@@ -63,10 +63,12 @@
     <Compile Include="Assets\PIckable\PickableManager.cs" />
     <Compile Include="Assets\PIckable\PickableType.cs" />
     <Compile Include="Assets\PIckable\Pickable.cs" />
+    <Compile Include="Assets\MainMenu\MainMenuManager.cs" />
     <Compile Include="Assets\Enemy\RetreatState.cs" />
     <Compile Include="Assets\Enemy\PatrolState.cs" />
     <Compile Include="Assets\Player\Player.cs" />
     <Compile Include="Assets\Enemy\BaseState.cs" />
+    <Compile Include="Assets\GameOver\GameOverManager.cs" />
     <Compile Include="Assets\Enemy\ChaseState.cs" />
   </ItemGroup>
   <ItemGroup>

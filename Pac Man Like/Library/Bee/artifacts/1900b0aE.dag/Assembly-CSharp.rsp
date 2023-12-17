@@ -367,6 +367,8 @@
 "Assets/Enemy/Enemy.cs"
 "Assets/Enemy/PatrolState.cs"
 "Assets/Enemy/RetreatState.cs"
+"Assets/GameOver/GameOverManager.cs"
+"Assets/MainMenu/MainMenuManager.cs"
 "Assets/PIckable/Pickable.cs"
 "Assets/PIckable/PickableManager.cs"
 "Assets/PIckable/PickableType.cs"

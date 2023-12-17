@@ -10,22 +10,23 @@ public class ScoreManager : MonoBehaviour
     private int _score;
     private int _maxScore;
 
-    public void UpdateUI()
+    public void AddScore(int value)
     {
-        _scoreText.text = "Score : " + _score + " / " + _maxScore;
+        _score += value;
+        UpdateUI();
     }
+  
     public void SetMaxScore (int value)
     {
         _maxScore = value;
         UpdateUI();
 
     }
-    public void AddScore(int value)
-    {
-        _score += value;
-        UpdateUI();
-    }
 
+    public void UpdateUI()
+    {
+        _scoreText.text = "Score : " + _score + " / " + _maxScore;
+    }
     private void Start()
     {
         _score = 0;
